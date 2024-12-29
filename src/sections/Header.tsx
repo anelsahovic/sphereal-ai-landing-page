@@ -45,7 +45,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="border-b border-gray-200/20 relative z-40">
+      <header className="border-b border-[var(--color-border)] relative z-40">
         <div className="container">
           <div className="h-18 lg:h-20 flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -129,7 +129,7 @@ export const Header = () => {
           <div className="absolute-center isolate -z-10">
             <Orbit className="size-[800px]" />
           </div>
-          <div className="container h-full border-b border-gray-200/20">
+          <div className="container h-full border-b border-[var(--color-border)]">
             <nav className="flex flex-col items-center gap-4 py-8 h-full justify-center ">
               {navItems.map((navItem, index) => (
                 <Link
