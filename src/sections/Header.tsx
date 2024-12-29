@@ -1,7 +1,7 @@
 'use client';
 
-import logoImage from '@/assets/images/sphereal-logo.svg?url';
 import { Button } from '@/components/Button';
+import { Logo } from '@/components/Logo';
 import { Orbit } from '@/components/Orbit';
 import { ButtonVariant } from '@/types/types';
 import Link from 'next/link';
@@ -49,13 +49,7 @@ export const Header = () => {
         <div className="container">
           <div className="h-18 lg:h-20 flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div
-                className="size-10 bg-gray-200 bg-[conic-gradient(from_45deg,var(--color-violet-400),var(--color-fuchsia-400),var(--color-amber-300),var(--color-teal-300),var(--color-violet-400))]"
-                style={{
-                  maskImage: `url(${logoImage.src})`,
-                  maskSize: 'contain',
-                }}
-              ></div>
+              <Logo />
               <div className="font-extrabold text-2xl">sphereal.ai</div>
             </div>
             <div className="h-full hidden lg:flex">

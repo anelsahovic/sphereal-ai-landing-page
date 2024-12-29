@@ -11,10 +11,11 @@ const buttonVariants = cva(
       },
       variant: {
         primary:
-          'p-[2px] bg-[conic-gradient(from_45deg,var(--color-violet-400),var(--color-fuchsia-400),var(--color-amber-300),var(--color-teal-300),var(--color-violet-400))] border-transparent bg-clip-border text-gray-200',
+          'p-[2px] bg-[conic-gradient(from_45deg,var(--color-violet-400),var(--color-fuchsia-400),var(--color-amber-300),var(--color-teal-300),var(--color-violet-400))] hover:bg-[conic-gradient(from_180deg,var(--color-violet-400),var(--color-fuchsia-400),var(--color-amber-300),var(--color-teal-300),var(--color-violet-400))] border-transparent bg-clip-border text-gray-200 hover:text-violet-400 transition duration-300',
         secondary:
-          'bg-gray-100 text-gray-950 hover:bg-transparent hover:text-gray-100 hover:border transition duration-300',
-        tertiary: 'bg-gray-800 text-gray-200 border-2 border-gray-700',
+          'bg-gray-100 text-gray-950 hover:bg-violet-950 hover:border-2 hover:border-violet-800 hover:text-violet-200 transition duration-300',
+        tertiary:
+          'bg-gray-800 text-gray-200 border-2 border-gray-700 hover:bg-gray-900 transition duration-300',
       },
     },
     defaultVariants: {
@@ -28,7 +29,7 @@ const spanVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-gray-950 ',
+        primary: 'bg-gray-950 hover:opacity-95',
         secondary: '',
         tertiary: '',
       },
