@@ -58,7 +58,7 @@ export const Header = () => {
                   <Link
                     key={index}
                     href={item.href}
-                    className="h-full px-10 relative font-bold text-xs tracking-widest text-gray-400 uppercase inline-flex items-center before:content[''] before:absolute before:bottom-0 before:h-2 before:w-px before:bg-gray-200/20 before:left-0 after:content[''] after:absolute after:bottom-0 after:h-2 after:w-px after:bg-gray-200/20 after:right-0 after:hidden last:after:block "
+                    className="h-full px-10 relative font-bold text-xs tracking-widest text-gray-400 uppercase inline-flex items-center before:content[''] before:absolute before:bottom-0 before:h-2 before:w-px before:bg-gray-200/20 before:left-0 after:content[''] after:absolute after:bottom-0 after:h-2 after:w-px after:bg-gray-200/20 after:right-0 after:hidden last:after:block hover:text-gray-100 transition duration-300"
                   >
                     {item.name}
                   </Link>
@@ -129,7 +129,7 @@ export const Header = () => {
                 <Link
                   key={index}
                   href={navItem.href}
-                  className="text-gray-400 uppercase tracking-widest font-body text-xs h-10"
+                  className="text-gray-200 uppercase tracking-widest font-body text-sm h-10"
                 >
                   {navItem.name}
                 </Link>
