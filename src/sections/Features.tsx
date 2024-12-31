@@ -1,3 +1,5 @@
+'use client';
+
 import slackLogo from '../assets/images/slack-logo.png';
 import dockerLogo from '../assets/images/docker-logo.png';
 import figmaLogo from '../assets/images/figma-logo.png';
@@ -14,6 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { Logo } from '@/components/Logo';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export const features = [
   'Effortless integration',
@@ -106,15 +109,68 @@ export const Features = () => {
                   </div>
 
                   {logos.map((logo, index) => (
-                    <div
+                    <motion.div
                       key={index}
                       className="absolute inset-0"
-                      style={{ transform: `rotate(${logo.rotate}deg)` }}
+                      initial={{
+                        rotate: logo.rotate,
+                      }}
+                      animate={{
+                        rotate: [
+                          logo.rotate,
+                          logo.rotate + 45,
+                          logo.rotate + 45,
+                          logo.rotate + 90,
+                          logo.rotate + 90,
+                          logo.rotate + 135,
+                          logo.rotate + 135,
+                          logo.rotate + 180,
+                          logo.rotate + 180,
+                          logo.rotate + 225,
+                          logo.rotate + 225,
+                          logo.rotate + 270,
+                          logo.rotate + 270,
+                          logo.rotate + 315,
+                          logo.rotate + 315,
+                          logo.rotate + 360,
+                          logo.rotate + 360,
+                        ],
+                      }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 10,
+                      }}
                     >
-                      <div
+                      <motion.div
                         className="inline-flex items-center justify-center size-10 md:size-14 border border-[var(--color-border)] rounded-lg absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 bg-gray-950"
-                        style={{
-                          transform: `translate(-50%, -50%) rotate(-${logo.rotate}deg)`,
+                        initial={{
+                          translate: `-50% -50%`,
+                          rotate: -logo.rotate,
+                        }}
+                        animate={{
+                          rotate: [
+                            -logo.rotate,
+                            -logo.rotate - 45,
+                            -logo.rotate - 45,
+                            -logo.rotate - 90,
+                            -logo.rotate - 90,
+                            -logo.rotate - 135,
+                            -logo.rotate - 135,
+                            -logo.rotate - 180,
+                            -logo.rotate - 180,
+                            -logo.rotate - 225,
+                            -logo.rotate - 225,
+                            -logo.rotate - 270,
+                            -logo.rotate - 270,
+                            -logo.rotate - 315,
+                            -logo.rotate - 315,
+                            -logo.rotate - 360,
+                            -logo.rotate - 360,
+                          ],
+                        }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 10,
                         }}
                       >
                         <Image
@@ -122,8 +178,8 @@ export const Features = () => {
                           alt={logo.alt}
                           className="size-6 md:size-9"
                         />
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
