@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sphereal AI Landing Page
 
-## Getting Started
+This project is a modern, responsive, and visually appealing landing page for Sphereal AI built using **Next.js**. It features various sections, interactive animations, and smooth navigation, providing users with an engaging experience.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Header Component**: A stylish header with navigation links to key sections.
+- **Hero Section**: A captivating introduction with animations to draw attention.
+- **Companies Section**: Displays partner logos with circular animations and a horizontal scrolling effect.
+- **Features Section**: Highlights the key services or benefits offered.
+- **Pricing Section**: Clear and concise pricing plans.
+- **Testimonials Section**: Displays client feedback with an eye-catching design.
+- **Call-To-Action (CTA) Section**: Encourages users to take the next step with a bold CTA.
+- **Footer Section**: Includes contact information, social media links, and other essential details.
+- **Smooth Navigation**: Scrolls seamlessly to various sections when navigation links are clicked.
+- **Interactive Animations**:
+  - Hero section animations.
+  - Hover effects on the primary button.
+  - Circular and horizontal animations for logos.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js
+- **Styling**: Tailwind CSS
+- **Animation**: Framer Motion
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup Instructions
 
-## Learn More
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/anelsahovic/sphereal-ai-landing-page.git
+   ```
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd sphereal-ai-landing-page
+   ```
+3. **Install Dependencies**:
+   ```bash
+   pnpm install
+   ```
+4. **Run the Development Server**:
+   ```bash
+   pnpm run dev
+   ```
+5. **View the Application**:
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project is deployed on Vercel. You can view it live at: [https://anelsahovic-ai-landing-page.vercel.app/](https://anelsahovic-ai-landing-page.vercel.app/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contribution
 
-## Deploy on Vercel
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](#) if you want to contribute.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Name**: Anel Sahovic
+- **GitHub**: [anelsahovic](https://github.com/anelsahovic)
