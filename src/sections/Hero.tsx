@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/Button';
 import robotImg from '@/assets/images/robot.jpg';
 import underlineImage from '@/assets/images/underline.svg?url';
@@ -7,10 +9,35 @@ import { Orbit } from '@/components/Orbit';
 import { Planet } from '@/components/Planet';
 import { SectionBorder } from '@/components/SectionBorder';
 import { SectionContent } from '@/components/SectionContent';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { useMousePosition } from '@/utils/hooks';
 
 export const Hero = () => {
+  const { xProgress, yProgress } = useMousePosition();
+
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['end start', 'start end'],
+  });
+
+  const transformedY = useTransform(scrollYProgress, [0, 1], [200, -200]);
+
+  const springX = useSpring(xProgress);
+  const springY = useSpring(yProgress);
+
+  const translateLargeX = useTransform(springX, [0, 1], ['-25%', '25%']);
+  const translateLargeY = useTransform(springY, [0, 1], ['-25%', '25%']);
+
+  const translateMediumX = useTransform(springX, [0, 1], ['-50%', '50%']);
+  const translateMediumY = useTransform(springY, [0, 1], ['-50%', '50%']);
+
+  const translateSmallX = useTransform(springX, [0, 1], ['-100%', '100%']);
+  const translateSmallY = useTransform(springY, [0, 1], ['-100%', '100%']);
   return (
-    <section>
+    <section ref={sectionRef}>
       <div className="container">
         <SectionBorder>
           <SectionContent className="relative isolate [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
@@ -57,30 +84,61 @@ export const Hero = () => {
 
             <div className="relative isolate max-w-5xl mx-auto">
               <div className="absolute left-1/2 top-0">
-                <Planet
-                  size="lg"
-                  color="violet"
-                  className="-translate-x-[316px] -translate-y-[76px] rotate-135"
-                />
-                <Planet
-                  size="lg"
-                  color="violet"
-                  className="translate-x-[300px] -translate-y-[170px] -rotate-135 "
-                />
-                <Planet
-                  size="sm"
-                  color="fuchsia"
-                  className="-translate-x-[500px] -translate-y-[370px] rotate-135 "
-                />
-                <Planet
-                  size="md"
-                  color="teal"
-                  className="translate-x-[470px] -translate-y-[350px] -rotate-135 "
-                />
+                <motion.div
+                  style={{
+                    x: translateLargeX,
+                    y: translateLargeY,
+                  }}
+                >
+                  <Planet
+                    size="lg"
+                    color="violet"
+                    className="-translate-x-[316px] -translate-y-[76px] rotate-135"
+                  />
+                </motion.div>
+                <motion.div
+                  style={{
+                    x: translateLargeX,
+                    y: translateLargeY,
+                  }}
+                >
+                  <Planet
+                    size="lg"
+                    color="violet"
+                    className="translate-x-[300px] -translate-y-[170px] -rotate-135 "
+                  />
+                </motion.div>
+                <motion.div
+                  style={{
+                    x: translateSmallX,
+                    y: translateSmallY,
+                  }}
+                >
+                  <Planet
+                    size="sm"
+                    color="fuchsia"
+                    className="-translate-x-[500px] -translate-y-[370px] rotate-135 "
+                  />
+                </motion.div>
+                <motion.div
+                  style={{
+                    x: translateMediumX,
+                    y: translateMediumY,
+                  }}
+                >
+                  <Planet
+                    size="md"
+                    color="teal"
+                    className="translate-x-[470px] -translate-y-[350px] -rotate-135 "
+                  />
+                </motion.div>
               </div>
 
               <div className="hidden lg:block absolute top-[30%] left-0 -translate-x-10 z-10 ">
-                <div className="bg-gray-800/70 backdrop-blur-md border border-gray-700 rounded-xl p-4 w-72">
+                <motion.div
+                  className="bg-gray-800/70 backdrop-blur-md border border-gray-700 rounded-xl p-4 w-72"
+                  style={{ y: transformedY }}
+                >
                   <div>
                     Can you design an intuitive user interface for a fitness
                     app?
@@ -88,11 +146,14 @@ export const Hero = () => {
                   <div className="text-right text-gray-400 text-sm font-semibold">
                     1m ago
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               <div className="hidden lg:block absolute top-[50%] right-0 translate-x-10 z-10">
-                <div className="bg-gray-800/70 backdrop-blur-md border border-gray-700 rounded-xl p-4 w-72">
+                <motion.div
+                  className="bg-gray-800/70 backdrop-blur-md border border-gray-700 rounded-xl p-4 w-72"
+                  style={{ y: transformedY }}
+                >
                   <div>
                     <strong>Brainwave:</strong> I created one inspired by modern
                     fitness apps.
@@ -100,7 +161,7 @@ export const Hero = () => {
                   <div className="text-right text-gray-400 text-sm font-semibold">
                     Just now
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               <div className="border-2 rounded-2xl mt-16 overflow-hidden border-gradient relative ">
