@@ -59,6 +59,13 @@ export const Header = () => {
                     key={index}
                     href={item.href}
                     className="h-full px-10 relative font-bold text-xs tracking-widest text-gray-400 uppercase inline-flex items-center before:content[''] before:absolute before:bottom-0 before:h-2 before:w-px before:bg-gray-200/20 before:left-0 after:content[''] after:absolute after:bottom-0 after:h-2 after:w-px after:bg-gray-200/20 after:right-0 after:hidden last:after:block hover:text-gray-100 transition duration-300"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.querySelector(item.href);
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
                   >
                     {item.name}
                   </Link>
@@ -130,6 +137,14 @@ export const Header = () => {
                   key={index}
                   href={navItem.href}
                   className="text-gray-200 uppercase tracking-widest font-body text-sm h-10"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector(navItem.href);
+                    if (element) {
+                      setIsMobileNavOpen(false);
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   {navItem.name}
                 </Link>

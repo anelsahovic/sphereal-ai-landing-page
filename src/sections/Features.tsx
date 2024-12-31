@@ -66,7 +66,7 @@ export const logos = [
 
 export const Features = () => {
   return (
-    <section>
+    <section id="features">
       <div className="container">
         <SectionBorder borderTop>
           <SectionContent className="md:px-20 lg:px-40">
